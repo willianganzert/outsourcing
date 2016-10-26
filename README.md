@@ -49,8 +49,8 @@
 6. Tests can be executed over Eclipse IDE(Junit)
 6.1 Junits tests can be fount in "br.com.webapp.test.*" directories.
 7. Restful services
-* GET - listall - http://localhost:8080/outsourcing/api/user
-* GET - listone - http://localhost:8080/outsourcing/api/user/{id}
-* POST - persistone - http://localhost:8080/outsourcing/api/user/{id}
-* PUT - updateone - http://localhost:8080/outsourcing/api/user/{id}
-* DELETE - deleteone - http://localhost:8080/outsourcing/api/user/{id}
+ * GET - listall - http://localhost:8080/outsourcing/api/user
+ * GET - listone - http://localhost:8080/outsourcing/api/user/{id}
+ * POST - persistone - http://localhost:8080/outsourcing/api/user/{id}
+ * PUT - updateone - http://localhost:8080/outsourcing/api/user/{id}
+ * DELETE - deleteone - http://localhost:8080/outsourcing/api/user/{id}
