@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+	</h:head>
+	<h:body>
+		<h:form>
+			<p:commandButton label="insert" value="NEW" action="#{departmentsBean.insert()}"></p:commandButton>	
+			<p:dataTable var="department" value="#{departmentsBean.listDepartments}">
+				<p:column headerText="Id">
+					<h:outputText value="#{department.id}" />
+				</p:column>	
+				<p:column headerText="name">
+					<h:outputText value="#{department.name}" />
+				</p:column>	
+				<p:column headerText="description">
+					<h:outputText value="#{department.description}" />
+				</p:column>	
+				<p:column headerText="Actions">
+					<p:commandButton label="edit" value="EDIT" action="#{departmentsBean.update(department.id)}"></p:commandButton>
+					<p:commandButton label="delete" value="DELETE" action="#{departmentsBean.delete(department.id)}" update="@form"></p:commandButton>
+				</p:column>
+			</p:dataTable>	
+			<p:commandButton value="BACK" action="/index"></p:commandButton>
+		</h:form>	
+	</h:body>
+</html>

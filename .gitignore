@@ -1,0 +1,12 @@
+.idea/*
+.recommenders/*
+.metadata/*
+*/.project
+*/.settings/*
+*/.metadata/*
+*/target/*
+RemoteSystemsTempFiles/*
+Servers/*
+tomcat*/*
+apache-activemq-5.9.0-bin/*
+*.zip

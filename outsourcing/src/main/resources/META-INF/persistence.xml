@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+
+	<persistence-unit name="test">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>br.com.webapp.model.Department</class>
+		<class>br.com.webapp.model.Permission</class>
+		<class>br.com.webapp.model.User</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/test_volvo" />
+			<property name="javax.persistence.jdbc.user" value="postgres" />
+			<property name="javax.persistence.jdbc.password" value="postgres" />
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL82Dialect" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.enable_lazy_load_no_trans" value="true"/>
+<!-- 			<property name="hibernate.default_schema" value="test_volvo"/> -->
+		</properties>
+	</persistence-unit>
+</persistence>

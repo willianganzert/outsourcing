@@ -1,0 +1,28 @@
+1. Add module postgres in JBOSS Modules (https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6/html/Administration_and_Configuration_Guide/Install_a_JDBC_Driver_as_a_Core_Module1.html)
+1.1. Create a directory - "{JBOSS_HOME}\modules\org\postgresql\main"
+1.2. Add module.xml file with this content:
+
+<?xml version="1.0" encoding="UTF-8"?>
+  <module xmlns="urn:jboss:module:1.0" name="org.postgresql">
+  <resources>
+    <resource-root path="postgresql-9.1-901-1.jdbc4.jar"/>
+  </resources>
+  <dependencies>
+    <module name="javax.api"/>
+    <module name="javax.transaction.api"/>
+  </dependencies>
+</module>
+
+1.3. Add the information from a new module in domain file ({JBOSS_HOME}\domain\configuration\domain.xml)
+1.3.1 Find for drivers node
+1.3.2 Add information content
+<driver name="org.postgresql" module="org.postgresql">
+    <xa-datasource-class>org.postgresql.Driver</xa-datasource-class>
+</driver>
+2. Add Hibername dependency from new postgres module
+2.1. Find hibernate module configuration. ({JBOSS_HOME}\modules\org\hibernate\main\module.xml)
+2.2. Add dependency node information in dependencies node
+<module name="org.postgresql"/>
+3. Create environment variable "JBOSS_HOME" with homo path from jboss.	
+4. Starting server
+4.1. To start server, you need check if the Java Runtime is a 7 or lower version of Java otherwise your server never will start.

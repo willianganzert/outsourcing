@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+			<f:facet name="header">
+            Insert Permissions
+        </f:facet>
+
+			<p:outputLabel value="Id" />
+			<p:outputLabel value="#{permissionsBean.permission.id}" />
+
+			<p:outputLabel value="Name" />
+			<p:inputText value="#{permissionsBean.permission.name}" />
+
+			<p:outputLabel value="Descrition" />
+			<p:inputText value="#{permissionsBean.permission.description}" />
+			
+			<p:outputLabel value="users" />
+			<p:selectManyMenu value="#{permissionsBean.listUsersSelect}" showCheckbox="true" converter="userConverter">
+				<f:selectItems value="#{permissionsBean.listUsers}" var="u" itemLabel="#{u.name}" itemValue="#{u}" />
+			</p:selectManyMenu>
+
+			<p:commandButton label="save" value="SAVE"
+				action="#{permissionsBean.save()}" />
+			<p:commandButton label="back" value="BACK" action="list-permission" />
+		</h:panelGrid>
+	</h:form>
+
+</h:body>
+</html>
